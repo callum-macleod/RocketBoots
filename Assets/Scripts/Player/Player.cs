@@ -43,8 +43,36 @@ public class Player : MonoBehaviour
     }
 
     float CurrentFuelAsPercent { get { return CurrentFuel / maxFuel; } }
+    float CurrentChargeAsPercent { get { return ChargeTime * chargedFuelUsageRate / maxFuel; } }
 
     float chargeTime = 0f;
+    float ChargeTime
+    {
+        get { return chargeTime; }
+        set
+        {
+            
+            if (value == 0)
+            {
+                chargeIndicator.gameObject.SetActive(false);
+                chargeTime = value;
+                return;
+            }
+
+            if (value != 0 && chargeTime == 0)
+            {
+                chargeIndicator.gameObject.SetActive(true);
+            }
+            chargeTime = value;
+
+            float newYScale = CurrentChargeAsPercent * fuelMeterOriginalHeight;
+
+            Vector3 newPos = fuelMeter.position + (fuelMeter.localScale.y * Vector3.up) + (newYScale * Vector3.up);
+            chargeIndicator.position = newPos;
+            chargeIndicator.localScale = Utils.RemoveY(chargeIndicator.localScale) + newYScale * Vector3.up;
+        }
+    }
+
     bool releaseCharge = false;
     float chargedJetScale = 0.001f;
 
@@ -55,6 +83,7 @@ public class Player : MonoBehaviour
     Vector3 feetPoint;
 
     [SerializeField] Transform fuelMeter;
+    [SerializeField] Transform chargeIndicator;
     float fuelMeterOriginalHeight;
     float fuelMeterOriginalYPos;
 
@@ -108,7 +137,8 @@ public class Player : MonoBehaviour
                 rigidBody.AddForce(defaultJetForce * Time.deltaTime * (Move.normalized + Vector3.up), ForceMode.Force);
 
             CurrentFuel -= fuelUsageRate * Time.deltaTime;
-            Instantiate(fireFeetPrefab, transform.position - feetPoint, Quaternion.identity);
+            GameObject fire = Instantiate(fireFeetPrefab, transform.position - feetPoint, Quaternion.identity);
+            Destroy(fire, 4);
         }
         else if (CurrentFuel < maxFuel && chargeTime <= 0f)
         {
@@ -125,13 +155,13 @@ public class Player : MonoBehaviour
             if (rigidBody.velocity.y < 0)
                 rigidBody.velocity = Utils.RemoveY(rigidBody.velocity);
 
-            float charge = chargeTime * chargedFuelUsageRate;
+            float charge = ChargeTime * chargedFuelUsageRate;
             rigidBody.AddForce(charge * defaultJetForce * chargedJetScale * Vector3.up, ForceMode.Impulse);
 
             GameObject fire = Instantiate(fireFeetPrefab, transform.position - feetPoint, Quaternion.identity);
             Destroy(fire, 4);
 
-            chargeTime = 0;
+            ChargeTime = 0;
             releaseCharge = false;
         }     
     }
@@ -191,9 +221,9 @@ public class Player : MonoBehaviour
             bufferJets = true;
 
         // charge right click
-        if (Input.GetKey(KeyCode.Mouse1) && CurrentFuel > 0 && chargeTime < maxChargeTime)
+        if (Input.GetKey(KeyCode.Mouse1) && CurrentFuel > 0 && ChargeTime < maxChargeTime)
         {
-            chargeTime += Time.deltaTime;
+            ChargeTime += Time.deltaTime;
             CurrentFuel -= chargedFuelUsageRate * Time.deltaTime;
         }
 
