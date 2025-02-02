@@ -128,8 +128,9 @@ public class Player : MonoBehaviour
             float charge = chargeTime * chargedFuelUsageRate;
             rigidBody.AddForce(charge * defaultJetForce * chargedJetScale * Vector3.up, ForceMode.Impulse);
 
-            Instantiate(fireFeetPrefab, transform.position - feetPoint, Quaternion.identity);
-            
+            GameObject fire = Instantiate(fireFeetPrefab, transform.position - feetPoint, Quaternion.identity);
+            Destroy(fire, 4);
+
             chargeTime = 0;
             releaseCharge = false;
         }     
