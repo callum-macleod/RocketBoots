@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     float maxVerticalVel = 10f;
 
     float fuelRegenRate = 12.5f;
-    float fuelUsageRate = 20f;
+    float fuelUsageRate = 30f;
     float chargedFuelUsageRate = 50f;
     float maxFuel = 100f;
     float currentFuel;
@@ -101,14 +101,11 @@ public class Player : MonoBehaviour
 
             // help counter downward velocity if falling
             if (rigidBody.velocity.y < 0)
-                //rigidBody.velocity = Utils.RemoveY(rigidBody.velocity);
-                rigidBody.velocity = Utils.RemoveY(rigidBody.velocity) + (rigidBody.velocity.y * 0.5f * Vector3.up);
+                rigidBody.velocity = Utils.RemoveY(rigidBody.velocity) + (rigidBody.velocity.y * 0.8f * Vector3.up);
 
             // do jets
             if (rigidBody.velocity.y < maxVerticalVel)
                 rigidBody.AddForce(defaultJetForce * Time.deltaTime * (Move.normalized + Vector3.up), ForceMode.Force);
-                //rigidBody.AddForce(defaultJetForce * Time.deltaTime * (Move.normalized + Vector3.up).normalized, ForceMode.Force);
-            print(defaultJetForce * Time.deltaTime * (Move.normalized + Vector3.up).normalized);
 
             CurrentFuel -= fuelUsageRate * Time.deltaTime;
             Instantiate(fireFeetPrefab, transform.position - feetPoint, Quaternion.identity);
@@ -135,8 +132,7 @@ public class Player : MonoBehaviour
             
             chargeTime = 0;
             releaseCharge = false;
-        }
-            
+        }     
     }
 
     void CalculateMovement()

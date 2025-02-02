@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4012177309708215673}
   - component: {fileID: 710384230732286542}
   - component: {fileID: 7624338548854130286}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CapTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8033380809923918588}
   - component: {fileID: 4802641624132718789}
   - component: {fileID: 1762201841669776213}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FuelMeter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7548215582309680193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VerticalRotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8266117184284584948}
   - component: {fileID: 105630845563644472}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HorizontalRotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 3276647160004290576}
   - component: {fileID: 1921794698522626793}
   - component: {fileID: 5390855907490566656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CapBot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3661650514073684255}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FuelTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 7341666796801436168}
   - component: {fileID: 6103722812618477208}
   - component: {fileID: 6213682809866415677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 7085170948166426900}
   - component: {fileID: 5631077881106070421}
   - component: {fileID: 277048482617439202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +882,7 @@ GameObject:
   - component: {fileID: 5397553452785365540}
   - component: {fileID: 1859305365722247078}
   - component: {fileID: 8789528591159072230}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -963,7 +963,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8204544667001904759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -998,7 +998,7 @@ GameObject:
   - component: {fileID: 614891572228608370}
   - component: {fileID: 4271565296250514133}
   - component: {fileID: 1829769047646862814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1090,7 +1090,7 @@ GameObject:
   - component: {fileID: 347351467100278657}
   - component: {fileID: 5473581363637431497}
   - component: {fileID: 7519517706345737742}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arm (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1173,7 +1173,7 @@ GameObject:
   - component: {fileID: 5735103598871635581}
   - component: {fileID: 3392359959014682599}
   - component: {fileID: 3839121067039111582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TransparentCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1256,7 +1256,7 @@ GameObject:
   - component: {fileID: 690301338095199830}
   - component: {fileID: 7568368906708393452}
   - component: {fileID: 6900127175809738275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1341,7 +1341,7 @@ GameObject:
   - component: {fileID: 8165339048054280779}
   - component: {fileID: 536521612805646622}
   - component: {fileID: 2079203804178242412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1507,7 +1507,7 @@ GameObject:
   - component: {fileID: 1074634331245133644}
   - component: {fileID: 921934996410475836}
   - component: {fileID: 2135495167002419870}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}

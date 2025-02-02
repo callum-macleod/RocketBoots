@@ -10,4 +10,5 @@ public enum Layers
     SolidGround,
     Water,
     UI,
+    Player,
 }

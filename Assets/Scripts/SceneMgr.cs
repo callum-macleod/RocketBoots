@@ -18,6 +18,11 @@ public class SceneMgr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R)) ResetPlayer();   
+    }
+
+    public void ResetPlayer()
+    {
+        playerRef.transform.position = spawnPoint.position;
     }
 }
